@@ -5,12 +5,20 @@
 // Input = 4Output = 0
 // Input = 25Output = 2
 
-// function MultiplicativePersistence(num) {
+function MultiplicativePersistence(num, count) {
+  var count = count || 0;
+  var total = 1;
+  if (num < 10) {
+    return count;
+  }
+  var digits = num.toString().split('');
+  for (var i = 0; i < digits.length; i++) {
+    total *= Number(digits[i]);
+  }
+  return MultiplicativePersistence(total, ++count);
+}
 
-//   // code goes here
-//   return num;
-
-// }
+console.log(MultiplicativePersistence(25));
 
 // // keep this function call here
 // // to see how to enter arguments in JavaScript scroll down
